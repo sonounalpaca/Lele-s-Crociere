@@ -3,24 +3,22 @@ misurazione.py simula il funzionamento di un sensore
 generando valori casuali di temperatura e umidità
 """
     
-import random
+import random #libreria per la geneerazione dei numeri casuali
 
-def get_temperature(min_temp, max_temp, n_decimali):
+def on_temperatura(N):
     """
     Simulazione sensore temperatura. 
     Funzione che genera un valore di temperatura casuale da min a max gradi
     con cifre decimali pari a N
     """
-    temperatura = random.uniform(min_temp, max_temp) #genera un numero casuale tra due valori
-    return round(temperatura, n_decimali) #round limita il numero di decimali
+    TEMP = round(random.uniform(10,40), N) #round limita il numero di decimali e uniform genera un numero casuale tra due valori
+    return TEMP
 
-
-def get_humidity(min_hum, max_hum, n_decimali):
+def on_umidita(N):
     """
     Simulazione sensore umidità. 
     Funzione che genera un valore di umidità casuale da min a max percentuale di umidità
     con cifre decimali pari a N
     """
-    umidita = random.uniform(min_hum, max_hum)
-    return round(umidita, n_decimali)
-
+    UMID = round(random.uniform(20,90), N)
+    return UMID
