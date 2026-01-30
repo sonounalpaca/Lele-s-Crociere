@@ -102,6 +102,7 @@ try:
 except KeyboardInterrupt:
     print("\nChiusura del server")
     print("Numero totale invii alla IoT Platform:", invio_numero)
+    connessione.close()
 
 finally:
     server.close()
