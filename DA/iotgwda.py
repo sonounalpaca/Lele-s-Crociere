@@ -7,7 +7,7 @@ li elabora e li invia (simulazione) alla IoT Platform
 import socket        # per la comunicazione TCP
 import json          # per gestire dati JSON
 import time          # per gestire tempi e pause
-import cripta        # per la criptazione 
+import cripto        # per la criptazione 
 
 # lettura paramentri da file parametri.conf che contiene configurazioni del DA
 conf_file = open("parametri.conf", "r")      # apertura file configurazione
@@ -83,7 +83,7 @@ try:
                 dato_iot_json = json.dumps(dato_iot_giot)
 
                 # criptazione dati
-                dato_iot_json_criptato = cripta.criptazione(dato_iot_json)
+                dato_iot_json_criptato = cripto.criptazione(dato_iot_json)
 
                 print("Dato inviato alla IoT Platform (criptato):")
                 print(dato_iot_json_criptato)
