@@ -9,7 +9,7 @@ import time
 import misurazione
 
 # Lettura configurazione DC
-conf_file = open("configurazionedc.conf", "r")
+conf_file = open('configurazionedc.conf', 'r')
 config = json.load(conf_file)
 conf_file.close()
 
@@ -87,3 +87,4 @@ except Exception as e:
 finally:
     client_socket.close()
     print("Socket chiuso")
+
