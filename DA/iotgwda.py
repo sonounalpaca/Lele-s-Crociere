@@ -10,7 +10,7 @@ import time          # per gestire tempi e pause
 import cripto        # per la criptazione 
 
 # lettura paramentri da file parametri.conf che contiene configurazioni del DA
-conf_file = open("parametri.conf", "r")      # apertura file configurazione
+conf_file = open('parametri.conf', 'r', encoding='utf-8')      # apertura file configurazione
 config = json.load(conf_file)                # lettura parametri
 conf_file.close()                            # chiusura file
 
@@ -89,7 +89,7 @@ try:
                 print(dato_iot_json_criptato)
 
                 # Salvataggio su file IoT Platform
-                file_iotp = open("../IOTP/iotdata.dbt", "a") #apre file in append
+                file_iotp = open('../IOTP/iotdata.dbt', 'a') #apre file in append
                 file_iotp.write(dato_iot_json + "\n") #scrive dati
                 file_iotp.close() #chiude file
 
