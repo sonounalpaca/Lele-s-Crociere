@@ -1,0 +1,17 @@
+{
+    "Cabina": 1,
+    "Ponte": 1,
+    "Sensore":
+    {
+        "Nome": "DHT11",
+        "Tmin": 0,
+        "Tmax": 40,
+        "Umin": 20,
+        "Umax": 90,
+        "ErroreT": 2,
+        "ErroreU": 4
+    },
+    "Identità": "DC001-01",
+    "IPServer": "127.0.0.1",
+    "PortaServer": 2008
+}
