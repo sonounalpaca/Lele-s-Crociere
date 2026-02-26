@@ -11,7 +11,11 @@
         "ErroreT": 2,
         "ErroreU": 4
     },
-    "Identità": "DC001-01",
-    "IPServer": "127.0.0.1",
-    "PortaServer": 2008
+  "identita": "DC001-00001",
+  "osservazione": {
+    "rilevazione": 1234,
+    "timestamp": 1709203200,
+    "temperatura": 21.20,
+    "umidita": 60.25
+  }
 }
