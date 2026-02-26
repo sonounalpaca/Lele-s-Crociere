@@ -1,0 +1,9 @@
+Questa cartella deve contenere i seguenti file:
+- iotgwda.py
+- cripto.py
+
+Nella sotto cartella IOTP ci devono essere i seguenti file:
+- db.json
+
+Nella sotto cartella CONFIGURAZIONE devono essere presenti i seguenti file:
+- parametri.json

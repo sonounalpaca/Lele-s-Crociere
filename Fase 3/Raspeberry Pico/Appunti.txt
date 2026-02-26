@@ -1,0 +1,7 @@
+Questa cartella deve contenere i seguenti file:
+- dc.py
+- configurazionedc.json
+- wifipico.json
+- da.json
+- misurazione.py
+- wifidc.py
