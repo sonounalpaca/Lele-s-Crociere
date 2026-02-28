@@ -10,8 +10,9 @@ Restituisce un IOTdata conforme alle specifiche.
 """
 
 import json                 # libreria per leggere file JSON
-from gpiozero import DHT11  # libreria per gestire il sensore DHT11
+import dht                  # libreria per gestire il sensore DHT11
 import time
+from machine import Pin     # libreria per gestire il GPIO su ESP32/ESP8266
 
 # contatore globale delle rilevazioni
 contatore_rilevazioni = 0
@@ -38,8 +39,9 @@ def crea_sensore(config):
     """
     try:
         pin_segnale = config["cablaggio"]["segnale"]
-        return DHT11(pin_segnale)
-	#eccezione generata quando si tenta di accedere a una chiave inesistente in un dizionario Python
+        pin = Pin(pin_segnale, Pin.IN)  # Pin per lettura
+        return dht.DHT11(pin)
+    #eccezione generata quando si tenta di accedere a una chiave inesistente in un dizionario Python
     except KeyError:
         raise RuntimeError("Errore nei parametri di cablaggio")
 
@@ -55,8 +57,10 @@ def effettua_misurazione():
         config = carica_configurazione()
         sensore = crea_sensore(config)
 
-        temperatura = sensore.temperature
-        umidita = sensore.humidity
+        # lettura del sensore
+        sensore.measure()
+        temperatura = sensore.temperature()
+        umidita = sensore.humidity()
 
         if temperatura is None or umidita is None:
             raise RuntimeError("Errore lettura sensore")
@@ -85,7 +89,7 @@ def effettua_misurazione():
 
     except Exception as e:
         # condivide l'errore verso dc.py
-        raise RuntimeError(f"Errore durante la misurazione: {e}") #f serve a creare una stringa formattata
+        raise RuntimeError(f"Errore durante la misurazione: {e}")  # f serve a creare una stringa formattata
 
 
 # debug locale
