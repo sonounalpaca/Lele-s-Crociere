@@ -13,7 +13,7 @@ import time          # gestione timestamp e intervalli temporali
 import cripto        # modulo locale per la criptazione
 
 # lettura paramentri da file parametri.conf che contiene configurazioni del DA
-with open('parametri.json', 'r', encoding='utf-8') as conf_file:    # apertura file configurazione
+with open('configurazione/parametri.json', 'r', encoding='utf-8') as conf_file:    # apertura file configurazione
     config = json.load(conf_file)                # lettura parametri
 
 # Assegnazione parametri
