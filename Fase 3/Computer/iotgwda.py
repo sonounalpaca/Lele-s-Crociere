@@ -14,7 +14,7 @@ import cripto        # modulo locale per la criptazione
 
 # lettura paramentri da file parametri.conf che contiene configurazioni del DA
 with open('parametri.json', 'r', encoding='utf-8') as conf_file:    # apertura file configurazione
-config = json.load(conf_file)                # lettura parametri
+    config = json.load(conf_file)                # lettura parametri
 
 # Assegnazione parametri
 TEMPO_RILEVAZIONE = config["TEMPO_RILEVAZIONE"]
@@ -86,7 +86,7 @@ try:
                     "ponte": ponte,
                     "temperaturam": media_temperatura,
                     "umiditam": media_umidita,
-                    "dataeora": int(time.time()),
+                    "timestamp": int(time.time()),
                     "invionumero": invio_numero,
                     "identita": IDENTITA_GIOT
                 }
@@ -95,13 +95,13 @@ try:
                 dato_json = json.dumps(dato_da)
 
                 # criptazione dati
-                dato_criptato = cripta.cripto(dato_json)
+                dato_criptato = cripto.criptazione(dato_json)
 
                 print("Dato inviato alla IoT Platform (criptato):")
                 print(dato_criptato)
 
                 # Salvataggio su archivio locale (db.json)
-                with open('iotp/db.json', 'a') as file: #apertura file in append
+                with open('iotp/db.json', 'a', encoding='utf-8') as file: #apertura file in append
                     file.write(dato_json + "\n") #scrittura dati
 
                 # Reset delle variabili per il prossimo ciclo
