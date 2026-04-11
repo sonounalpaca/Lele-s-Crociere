@@ -24,7 +24,7 @@ def carica_configurazione():
     Gestisce eventuali errori di apertura o formato.
     """
     try:
-        with open("configurazione.json", "r") as file:
+        with open("configurazione/da.json", "r") as file:
             config = json.load(file)
         return config
     except FileNotFoundError:
@@ -38,7 +38,7 @@ def crea_sensore(config):
     Crea il sensore DHT11 usando il pin definito nel JSON.
     """
     try:
-        pin_segnale = config["cablaggio"]["segnale"]
+        pin_segnale = config["Sensore"]["cablaggio"]["segnale"]
         pin = Pin(pin_segnale, Pin.IN)  # Pin per lettura
         return dht.DHT11(pin)
     #eccezione generata quando si tenta di accedere a una chiave inesistente in un dizionario Python
@@ -73,10 +73,10 @@ def effettua_misurazione():
 
         # costruzione IOTdata
         iotdata = {
-            "camera": config["camera"],
-            "ponte": config["ponte"],
-            "sensore": config["sensore"],
-            "identita": config["identita"],
+            "camera": config["Cabina"],
+            "ponte": config["Ponte"],
+            "sensore": config["Sensore"],
+            "identita": config["Identità"],
             "osservazione": {
                 "rilevazione": contatore_rilevazioni,
                 "temperatura": round(temperatura, 2),
