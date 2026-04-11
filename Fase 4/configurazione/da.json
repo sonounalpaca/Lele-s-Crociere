@@ -1,6 +1,6 @@
 {
-    "IP": "192.168.60.1",
-    "porta": 9090,
+    "IPServer": "192.168.60.1",
+    "PortaServer": 9090,
     "Cabina": 1,
     "Ponte": 1,
     "Sensore": {
