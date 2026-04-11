@@ -38,7 +38,7 @@ def crea_sensore(config):
     Crea il sensore DHT11 usando il pin definito nel JSON.
     """
     try:
-        pin_segnale = config["Sensore"]["cablaggio"]["segnale"]
+        pin_segnale = config["Cablaggio"]["segnale"]
         pin = Pin(pin_segnale, Pin.IN)  # Pin per lettura
         return dht.DHT11(pin)
     #eccezione generata quando si tenta di accedere a una chiave inesistente in un dizionario Python
