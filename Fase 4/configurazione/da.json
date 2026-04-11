@@ -12,5 +12,9 @@
         "ErroreT": 2,
         "ErroreU": 4
     },
-    "Identità": "DC001-00001"
+    "Identità": "DC001-00001",
+    "Cablaggio": {
+        "segnale": 0,
+        "gnd": 38
+    }
 }
