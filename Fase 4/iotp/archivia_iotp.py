@@ -49,7 +49,7 @@ def on_message(client, userdata, msg):
         dato_criptato = msg.payload.decode()
 
         # Decriptazione
-        dato_decriptato = cripto.decripta(dato_criptato)
+        dato_decriptato = cripto.decriptazione(dato_criptato)
 
         # Conversione JSON
         dato_json = json.loads(dato_decriptato)
