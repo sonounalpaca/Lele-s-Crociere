@@ -1,6 +1,5 @@
 """
 dc.py
-Data Collector - Fase 3
 
 Client TCP su Raspberry Pico che:
 1. Si connette al WiFi
@@ -60,8 +59,9 @@ try:
         n_rilevazione += 1
 
         # Lettura dati sensore
-        temperatura = misurazione.on_temperatura(SENSORE["ErroreT"])
-        umidita = misurazione.on_umidita(SENSORE["ErroreU"])
+        iotdata = misurazione.effettua_misurazione()
+        temperatura = iotdata["osservazione"]["temperatura"]
+        umidita = iotdata["osservazione"]["umidita"]
 
         # Creazione struttura DatoIoT
         dato_iot = {
