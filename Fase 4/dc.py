@@ -27,7 +27,7 @@ print("WiFi connesso. IP assegnato:", ip_locale)
 
 
 # LETTURA CONFIGURAZIONE DC
-conf_file = open('configurazionedc.conf', 'r')
+conf_file = open('configurazione/da.json', 'r')
 config = json.load(conf_file)
 conf_file.close()
 
