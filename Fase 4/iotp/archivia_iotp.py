@@ -15,14 +15,14 @@ import cripto
 
 
 # LETTURA CONFIGURAZIONE IOTP
-conf_file = open("iotp/iotp.json", "r")
+conf_file = open("iotp.json", "r")
 config = json.load(conf_file)
 conf_file.close()
 
 TOPIC = config["topic"]
 BROKER_HOST = config["broker"]["host"]
 PORTA_BROKER = config["broker"]["porta"]
-DB_FILE = "iotp/" + config["dbfile"]["file"]
+DB_FILE = config["dbfile"]["file"]
 MODO = config["dbfile"]["modo"]
 
 KEEPALIVE = 60
